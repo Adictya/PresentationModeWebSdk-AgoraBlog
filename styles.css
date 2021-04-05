@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+}
+
+#labelText {
+  position: absolute;
+  z-index: 10;
+}
+
+#container {
+  background-color: #099dfd;
+}
+#webcam {
+  border-radius: 200px;
+}
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+}
+.left-pane {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 40vw;
+  height: auto;
+  margin-bottom: 0px;
+  height: 100vh;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 52px rgba(0, 0, 0, 0.13);
+}
+.logoSmall {
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 50px;
+}
+.logoElement {
+  max-width: 100%;
+  max-height: 100%;
+}
+.loginContainer {
+  margin-top: 20vh;
+}
+.headingText {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+}
+input:first-of-type {
+  margin-top: 40px;
+}
+input {
+  margin-top: 20px;
+  border-radius: 5px;
+  width: 93%;
+  padding: 5px;
+  border: 1px solid #099dfd;
+  font-size: 1.25rem;
+}
+
+.right-pane {
+  width: auto;
+  flex: 1;
+  text-align: center;
+}
+
+.imageContainer {
+  width: 100%;
+}
+
+.illustrationContainer {
+  width: 75%;
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+.illustrationElement {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.submitButton {
+  background: #099dfd;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.right-container {
+  display: flex;
+  width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#SelfStream {
+  text-align: left;
+  margin-top: 100px;
+  justify-self: center;
+  border: 2px solid #099dfd;
+  width: 700px;
+  height: 400px;
+}
+.remoteStream {
+  text-align: left;
+  margin-top: 100px;
+  margin-left: 100px;
+  justify-self: center;
+  border: 2px solid #099dfd;
+  width: 700px;
+  height: 400px;
+}

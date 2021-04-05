@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta name="description" content="Agora Presentation mode using Agora Web Sdk 3.x">
+  <meta name="keywords" content="HTML, CSS, JavaScrip, Live Broadcasting, Video">
+  <meta name="author" content="Aditya Rathore">
+
+  <meta charset="UTF-8" />
+  <title>Agora SDK Tutorial</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+
+</head>
+
+<body>
+  <div class="flexContainer">
+    <div class="left-pane">
+      <div class="logoSmall">
+        <img class="logoElement" src="assets/agoraLogo.png"></img>
+      </div>
+      <span class="headingText">
+        Join or start a stream!
+      </span>
+      <input type="text" id="userName" placeholder="Username" value="JohnDoe123">
+      <input type="text" id="ChannelName" placeholder="ChannelName" value="DefaultChannel">
+      <button class="submitButton" id="stream">Stream</button>
+      <button class="submitButton" id="join">Join</button>
+      <br>
+      <button class="submitButton" id="leave"
+        style="background-color: #ff0000;width: 100px;margin-top: 10px;">Leave</button>
+      <br>
+    </div>
+    <div class="right-pane">
+      <div class="right-container">
+        <div id="SelfStream" style="transform: rotateY(180deg);">
+          <div style="transform: rotateY(180deg)">
+            <span id="labelText">  Self Stream </span>
+          </div>
+        </div>
+        <div id="remoteStream" class="remoteStream">
+          <div>
+            <span id="labelText" > Remote Stream </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.4.0.js"></script>
+  <script src="./agora-rtc.js"></script>
+</body>
+
+</html>
