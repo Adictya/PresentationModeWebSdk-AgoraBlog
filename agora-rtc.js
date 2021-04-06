@@ -3,7 +3,6 @@
 // Blog Link:
 //
 // Your agoraSdk App Id , you can get this from https://console.agora.io
-let appId = "******************************";
 
 // Initializing global stream variables
 let userVideoStream;
@@ -48,24 +47,6 @@ let handlefail = function (err) {
 };
 
 // Initializing client
-client.init(
-  appId,
-  () => console.log("AgoraRTC Client initialized"),
-  handlefail
-);
-
-// Adding listeners
-client.on("stream-added", function (evt) {
-  client.subscribe(evt.stream, handlefail);
-});
-
-client.on("stream-subscribed", function (evt) {
-  console.log("I was called");
-  let stream = evt.stream;
-  addVideoStream(stream.getId());
-  stream.play(stream.getId());
-});
-
 // Function to add/append video streams to remoteContainer
 function addVideoStream(streamId) {
   let streamdiv = document.createElement("div");
@@ -187,9 +168,34 @@ async function streamMultiplexer() {
 document.getElementById("stream").onclick = function () {
   let channelName = document.getElementById("ChannelName").value;
   let userName = document.getElementById("userName").value;
+  let appId = document.getElementById("appid").value;
+  console.log(appId);
+  let token = document.getElementById("token").value;
+
+  if (appId == "") {
+    appId = window.prompt("Please enter an appid");
+  }
+
+  client.init(
+    appId,
+    () => console.log("AgoraRTC Client initialized"),
+    handlefail
+  );
+
+  // Adding listeners
+  client.on("stream-added", function (evt) {
+    client.subscribe(evt.stream, handlefail);
+  });
+
+  client.on("stream-subscribed", function (evt) {
+    console.log("I was called");
+    let stream = evt.stream;
+    addVideoStream(stream.getId());
+    stream.play(stream.getId());
+  });
 
   client.join(
-    null,
+    token || null,
     channelName,
     userName,
     () => {
@@ -214,6 +220,24 @@ document.getElementById("stream").onclick = function () {
 document.getElementById("join").onclick = function () {
   let channelName = document.getElementById("ChannelName").value;
   let userName = document.getElementById("userName").value;
+
+  client.init(
+    appId,
+    () => console.log("AgoraRTC Client initialized"),
+    handlefail
+  );
+
+  // Adding listeners
+  client.on("stream-added", function (evt) {
+    client.subscribe(evt.stream, handlefail);
+  });
+
+  client.on("stream-subscribed", function (evt) {
+    console.log("I was called");
+    let stream = evt.stream;
+    addVideoStream(stream.getId());
+    stream.play(stream.getId());
+  });
 
   client.join(
     null,
